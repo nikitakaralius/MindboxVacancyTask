@@ -42,7 +42,7 @@ namespace Planimetry.Shapes
             }
         }
 
-        public static Triangle From(IList<double> triplet)
+        public static Triangle From(IReadOnlyList<double> triplet)
         {
             if (triplet.Count != 3)
             {
