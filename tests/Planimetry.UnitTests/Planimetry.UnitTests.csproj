@@ -21,4 +21,8 @@
     <ProjectReference Include="..\..\src\Planimetry\Planimetry.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Shapes\" />
+  </ItemGroup>
+
 </Project>
