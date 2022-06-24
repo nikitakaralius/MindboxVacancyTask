@@ -12,7 +12,7 @@ namespace Planimetry.Shapes
         public Triangle(double a, double b, double c)
         {
             ShapeParameterException.ThrowIfNegative(a, nameof(a));
-            ShapeParameterException.ThrowIfNegative(c, nameof(b));
+            ShapeParameterException.ThrowIfNegative(b, nameof(b));
             ShapeParameterException.ThrowIfNegative(c, nameof(c));
             if (TriangleExists(a, b, c) == false)
             {
@@ -42,7 +42,7 @@ namespace Planimetry.Shapes
             }
         }
 
-        public static Triangle From(IList<double> triplet)
+        public static Triangle From(IReadOnlyList<double> triplet)
         {
             if (triplet.Count != 3)
             {
@@ -51,7 +51,7 @@ namespace Planimetry.Shapes
             return new Triangle(triplet[0], triplet[1], triplet[2]);
         }
 
-        private double[] SidesInAscendingOrder() => SidesInAscendingOrder(A, B, C);
+        public double[] SidesInAscendingOrder() => SidesInAscendingOrder(A, B, C);
 
         private static double[] SidesInAscendingOrder(double a, double b, double c)
         {
