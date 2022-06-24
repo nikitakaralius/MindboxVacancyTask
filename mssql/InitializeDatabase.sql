@@ -5,32 +5,32 @@ GO
 USE [Storehouse]
 GO
 
-CREATE TABLE [dbo].[Product](
+CREATE TABLE [dbo].[Products](
 	[Id] [int] IDENTITY(1, 1),
 	[Name] [nvarchar](256) NOT NULL
 )
 GO
 
-ALTER TABLE [dbo].[Product]
-ADD CONSTRAINT [PK_Product_Id] PRIMARY KEY CLUSTERED (Id)
+ALTER TABLE [dbo].[Products]
+ADD CONSTRAINT [PK_Products_Id] PRIMARY KEY CLUSTERED (Id)
 GO
 
 
 USE [Storehouse]
 GO
 
-CREATE TABLE [dbo].[Category](
+CREATE TABLE [dbo].[Categories](
 	[Id] [int] IDENTITY(1, 1),
 	[Name] [nvarchar](256) NOT NULL
 )
 GO
 
-ALTER TABLE [dbo].[Category]
-ADD CONSTRAINT [PK_Category_Id] PRIMARY KEY CLUSTERED (Id)
+ALTER TABLE [dbo].[Categories]
+ADD CONSTRAINT [PK_Categories_Id] PRIMARY KEY CLUSTERED (Id)
 GO
 
-ALTER TABLE [dbo].[Category]
-ADD CONSTRAINT [Unique_Category_Name] UNIQUE ([Name])
+ALTER TABLE [dbo].[Categories]
+ADD CONSTRAINT [Unique_Categories_Name] UNIQUE ([Name])
 GO
 
 
@@ -50,14 +50,14 @@ GO
 
 ALTER TABLE [dbo].[ProductCategories]
 WITH CHECK ADD CONSTRAINT [FK_ProductCategories_ProductId] FOREIGN KEY (ProductId)
-REFERENCES [dbo].[Product] (Id)
+REFERENCES [dbo].[Products] (Id)
 ON UPDATE CASCADE
 ON DELETE CASCADE
 GO
 
 ALTER TABLE [dbo].[ProductCategories]
 WITH CHECK ADD CONSTRAINT [FK_ProductCategories_CategoryId] FOREIGN KEY (CategoryId)
-REFERENCES [dbo].[Category] (Id)
+REFERENCES [dbo].[Categories] (Id)
 ON UPDATE CASCADE
 ON DELETE SET NULL
 GO
@@ -66,7 +66,7 @@ GO
 USE [Storehouse]
 GO
 
-INSERT [dbo].[Category] (Name) VALUES
+INSERT [dbo].[Categories] (Name) VALUES
 ('Mechanic Keyboards'),
 ('Keyboards'),
 ('Headphones'),
@@ -78,7 +78,7 @@ INSERT [dbo].[Category] (Name) VALUES
 ('Cameras')
 GO
 
-INSERT [dbo].[Product] (Name) VALUES
+INSERT [dbo].[Products] (Name) VALUES
 ('Razer Blackwidow 2014'),
 ('Apple AirPods Pro'),
 ('Anne Pro 2'),

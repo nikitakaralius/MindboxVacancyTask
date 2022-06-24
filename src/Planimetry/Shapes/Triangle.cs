@@ -29,7 +29,7 @@ namespace Planimetry.Shapes
 
         public double Area => AreaByHeronsFormula();
 
-        public bool Right
+        public bool IsRight
         {
             get
             {

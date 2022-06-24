@@ -9,12 +9,12 @@ public class TriangleTests
     [TestCaseSource(nameof(NaturalPythagoreanTriplets))]
     [TestCaseSource(nameof(DecimalPythagoreanTriplets))]
     public void DeterminesIfTriangleIsRight(double[] triplet) => 
-        Triangle.From(triplet.Shuffled()).Right.Should().Be(true);
+        Triangle.From(triplet.Shuffled()).IsRight.Should().Be(true);
 
     [Test]
     [TestCaseSource(nameof(NonPythagoreanTriplets))]
     public void DeterminesIfTriangleIsNotRight(double[] triplet) => 
-        Triangle.From(triplet).Right.Should().BeFalse();
+        Triangle.From(triplet).IsRight.Should().BeFalse();
 
     [Test]
     [TestCaseSource(nameof(NaturalPythagoreanTriplets))]
