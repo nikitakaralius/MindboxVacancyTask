@@ -80,6 +80,12 @@ Console.WriteLine(triangle.Radius); // 2.4
 
 ---
 
+### Unit tests
+
+All the shapes covered with [Unit Tests](tests/Planimetry.UnitTests/)
+
+---
+
 ## MSSQL Solution Explained
 ---
 The task was to create a query that selects all the pairs of products and their categories. Moreover, each product can have multiple categories, and each category can have various products. Products without any category should be selected too. So, we have to build a many-to-many relationship there.
