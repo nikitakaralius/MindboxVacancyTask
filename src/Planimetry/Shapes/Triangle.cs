@@ -27,7 +27,18 @@ namespace Planimetry.Shapes
 
         public double C { get; }
 
-        public double Area => AreaByHeronsFormula();
+        public double Area
+        {
+            get
+            {
+                double HeronsFormula()
+                {
+                    double semiPerimeter = (A + B + C) / 2;
+                    return Sqrt(semiPerimeter * (semiPerimeter - A) * (semiPerimeter - B) * (semiPerimeter - C));
+                }
+                return HeronsFormula();
+            }
+        }
 
         public bool IsRight
         {
@@ -64,12 +75,6 @@ namespace Planimetry.Shapes
         {
             double[] sides = SidesInAscendingOrder(a, b, c);
             return sides[2] < sides[0] + sides[1];
-        }
-
-        private double AreaByHeronsFormula()
-        {
-            double semiPerimeter = (A + B + C) / 2;
-            return Sqrt(semiPerimeter * (semiPerimeter - A) * (semiPerimeter - B) * (semiPerimeter - C));
         }
     }
 }
