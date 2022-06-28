@@ -73,9 +73,9 @@ public class TriangleInequalityException : Exception { ... }
 
 The circle has radius and area
 ```csharp
-var triangle = new Circle(2.4);
-Console.WriteLine(triangle.Area); // 18.0955736847
-Console.WriteLine(triangle.Radius); // 2.4
+var circle = new Circle(2.4);
+Console.WriteLine(circle.Area); // 18.0955736847
+Console.WriteLine(circle.Radius); // 2.4
 ```
 
 ---
