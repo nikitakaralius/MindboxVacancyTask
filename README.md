@@ -47,17 +47,17 @@ public class Rectangle : IShape
 
 You can create a triangle passing 3 sides separately
 ```csharp
-var triangle = new Triangle(3, 4, 5);
+var triangle = Triangle.Create(3, 4, 5);
 ```
 Or using a list of 3 elements. If the list contains more or less than 3 elements, then the ArgumentException will be thrown.
 ```csharp
 double[] triplet = {3.0, 4.0, 5.0};
-var triangle = Triangle.From(triplet);
+var triangle = Triangle.Create(triplet);
 ```
 
 It's easy to get an area or check if a triangle is right
 ```csharp
-var triangle = new Triangle(3, 4, 5);
+var triangle = Triangle.Create(3, 4, 5);
 Console.WriteLine(triangle.Area); // 6.0
 Console.WriteLine(triangle.IsRight); // true
 ```
@@ -73,7 +73,7 @@ public class TriangleInequalityException : Exception { ... }
 
 The circle has radius and area
 ```csharp
-var circle = new Circle(2.4);
+var circle = Circle.Create(2.4);
 Console.WriteLine(circle.Area); // 18.0955736847
 Console.WriteLine(circle.Radius); // 2.4
 ```
