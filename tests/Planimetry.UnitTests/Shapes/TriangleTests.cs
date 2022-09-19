@@ -45,6 +45,14 @@ public class TriangleTests
         initialization.Should().Throw<TriangleInequalityException>();
     }
 
+    [Test]
+    public void TrianglesWithSameSidesShouldBeEqual()
+    {
+        var triangle1 = Triangle.Create(5, 8, 9);
+        var triangle2 = Triangle.Create(8, 9, 5);
+        triangle1.Equals(triangle2).Should().BeTrue();
+    }
+
     #endregion
 
     #region Sources

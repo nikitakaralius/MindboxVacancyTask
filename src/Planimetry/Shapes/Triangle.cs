@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Planimetry.Core;
 using Planimetry.Exceptions;
 using static System.Math;
@@ -88,7 +89,11 @@ namespace Planimetry.Shapes
         {
             if (ReferenceEquals(null, other)) return false;
             if (ReferenceEquals(this, other)) return true;
-            return A.Equals(other.A) && B.Equals(other.B) && C.Equals(other.C);
+
+            double[] sides = SidesInAscendingOrder(A, B, C);
+            double[] otherSides = SidesInAscendingOrder(other.A, other.B, other.C);
+
+            return sides.SequenceEqual(otherSides);
         }
 
         public override bool Equals(object? obj)
@@ -101,7 +106,8 @@ namespace Planimetry.Shapes
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(A, B, C);
+            double[] sides = SidesInAscendingOrder(A, B, C);
+            return HashCode.Combine(sides[0], sides[1], sides[2]);
         }
     }
 }
