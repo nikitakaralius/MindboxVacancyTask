@@ -7,6 +7,21 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planimetry", "src\Planimetr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planimetry.UnitTests", "tests\Planimetry.UnitTests\Planimetry.UnitTests.csproj", "{F34044CF-3614-4DC5-809A-1BD250CCFFC2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E8929F64-CFAD-4AC6-B4EE-C99597B19297}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{D83AD611-33EC-49AB-A1E8-EC765ACD476A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "items", "items", "{D9FBB529-0424-491A-B9D8-7E663C1C4C56}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "mssql", "mssql", "{13EE4F64-D4EE-44DE-9226-2932A85121F6}"
+	ProjectSection(SolutionItems) = preProject
+		mssql\InitializeDatabase.sql = mssql\InitializeDatabase.sql
+		mssql\ProductWithCategory.sql = mssql\ProductWithCategory.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,5 +42,9 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CAAD4A33-608C-43A5-A167-69A50995407C}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5D364A86-7FCB-4433-B309-5AE642E13860} = {E8929F64-CFAD-4AC6-B4EE-C99597B19297}
+		{F34044CF-3614-4DC5-809A-1BD250CCFFC2} = {D83AD611-33EC-49AB-A1E8-EC765ACD476A}
 	EndGlobalSection
 EndGlobal
